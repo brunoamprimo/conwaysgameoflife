@@ -18,7 +18,7 @@ public class GameGrid {
 		return grid;
 	}
 
-	public GameGrid(int width, int length, int liveRate){
+	public GameGrid(int width, int length, int liveRate){ // creates the grid using buttons (since they scale), using a 2D array of the size inputted by the player
 		frame.setLayout(new GridLayout(width, length));
 		grid = new JButton[width][length];
 		for(int y = 0; y < length; y++){
