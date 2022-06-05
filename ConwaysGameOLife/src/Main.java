@@ -60,7 +60,7 @@ public class Main extends JFrame {
 	
 	//
 	
-	public void sleep(int ms) {
+	public void sleep(int ms) { // intended to pause the program
 		try {
 			Thread.sleep(ms);
 		} catch (InterruptedException e) {
@@ -69,7 +69,7 @@ public class Main extends JFrame {
 		}
 	}
 	
-	public void gameOfLife() {
+	public void gameOfLife() { // the method to run the game of life a single time
 		cycleTick++;
 		tickText.setText("Tick: " + cycleTick);
 		ArrayList<JButton> toLive = new ArrayList<JButton>();
@@ -160,7 +160,7 @@ public class Main extends JFrame {
 		}
 	}
 	
-	public void runLoop() {
+	public void runLoop() { // loop the method so that the game of life continues on...
 		new Thread(new Runnable() {
 			@Override
 			public void run() {
@@ -172,7 +172,7 @@ public class Main extends JFrame {
 		}).start();
 	}
 	
-	public void toggleLoop() {
+	public void toggleLoop() { // toggles loop
 		isRunning = !isRunning;
 		if(isRunning) {
 			runLoop();
@@ -181,7 +181,7 @@ public class Main extends JFrame {
 	
 	//
 	
-	public void startGame() {
+	public void startGame() { // sets up the game UI
 		gameStart = true;
 		//
 		gameTitle.setVisible(false);
@@ -204,7 +204,7 @@ public class Main extends JFrame {
 		gridFrame.setVisible(true); gamePanel.add(gridFrame);
 	}
 	
-	public void initgame() {
+	public void initgame() { // initalizes all the game buttons, including to play it and to run the program once/in a loop.
 		final JButton[] buttonList = {playButton, runOnceButton, runButton};
 		for(int i = 0; i < buttonList.length; i++) {
 			final int ic = i + 1;
@@ -238,7 +238,7 @@ public class Main extends JFrame {
 		}
 	}
 	
-	public void setup() {
+	public void setup() { // sets up the starting UI
 		// Initalize window
 		setTitle("Conway's Game of Life");
 		setResizable(false);
@@ -336,11 +336,11 @@ public class Main extends JFrame {
 	    initgame();
 	}
 	
-	public Main() {
+	public Main() { // constructor
 		setup();
 	}
 	
-	public static void main(String [] args) {
+	public static void main(String [] args) { // necessary to start
 //		try {
 //			iconimg = ImageIO.read(Main.class.getResourceAsStream("/cgol.png"));
 //		} catch (IOException e) {
